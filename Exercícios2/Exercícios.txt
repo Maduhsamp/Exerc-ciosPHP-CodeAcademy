@@ -1,4 +1,6 @@
 1.
+    <?php
+
     $valor = readline("Digite um número: ");
 
         if ($valor > 10) {
@@ -8,6 +10,8 @@
         }
 
 2.
+    <?php
+
     $valor = readline("Digite um número: ");
 
     if ($valor >= 0) {
@@ -17,6 +21,8 @@
     }
 
 3. 
+    <?php
+
     $macas = readline("Digite o número de maçãs que deseja comprar: ");
 
     if ($macas < 12) {
@@ -27,6 +33,8 @@
     }
 
 4.
+    <?php
+
     $nota1 = readline("Digite a nota final do primeiro bimestre do 1a: ");
     $nota2 = readline("Digite a nota final do segundo bimestre do 1a: ");
     $nota3 = readline("Digite a nota final do terceiro bimestre do 1a: ");
@@ -58,6 +66,7 @@
     }
 
 5.
+    <?php
 
     $nascimento = readline("Digite o ano de nascimento: ");
 
@@ -74,6 +83,8 @@
     }
 
 6.
+    <?php
+
     $a = readline("Digite o valor de a: ");
     $b = readline("Digite o valor de b: ");
         
@@ -88,6 +99,8 @@
     }
 
 7.
+    <?php
+
     $idade = readline("Digite a idade do nadador: ");
 
     if ($idade > 4 && $idade <= 7) {
@@ -107,6 +120,8 @@
     }
 
 8.
+    <?php
+
     $produto = readline("Digite o valor do produto: ");
     $codigo = readline("Digite o código de pagamento: ");
 
@@ -127,6 +142,8 @@
     }
 
 9.
+    <?php
+
     $num = readline("Digite um número: ");
 
     if ($num >= 30 && $num <= 90) {
@@ -140,6 +157,8 @@
     }
 
 10. 
+    <?php
+
     $produto = readline("Digite o valor do produto: ");
 
     if ($produto < 20) {
@@ -152,6 +171,8 @@
     }
 
 11.
+    <?php
+    
     $jogador1 = (int)readline("Escolha do Jogador 1 (1 para 'um', 2 para 'dois'): ");
     $jogador2 = (int)readline("Escolha do Jogador 2 (1 para 'um', 2 para 'dois'): ");
     $jogador3 = (int)readline("Escolha do Jogador 3 (1 para 'um', 2 para 'dois'): ");
@@ -160,43 +181,77 @@
         $ganhador1 = 1;
         $ganhador2 = 2;
         $perdedor = 3;
-    } elseif ($jogador1 == $jogador3 && $jogador1 != $jogador2) {
+
+        echo "Perdedor do dois-ou-um: Jogador $perdedor\n";
+        echo "Ganhador 1 do dois-ou-um: Jogador $ganhador1\n";
+        echo "Ganhador 2 do dois-ou-um: Jogador $ganhador2\n";
+
+        $parouimpar1 = readline("Escolha jogador 1 par ou ímpar: ");
+        $parouimpar2 = readline("Escolha jogador 2 par ou ímpar: ");
+        
+        $escolhaVencedor1 = (int)readline("Jogador $ganhador1 escolhe um número ímpar ou par: ");
+        $escolhaVencedor2 = (int)readline("Jogador $ganhador2 escolhe um número ímpar ou par: ");
+
+        $resultado = $escolhaVencedor1 + $escolhaVencedor2;
+        if ($resultado % 2 == 0 && $parouimpar1 == "par"){
+            echo "Jogador 1 venceu!";
+        } else if ($resultado % 2 == 0 && $parouimpar2 == "par"){
+            echo "Jogador 2 venceu!";
+        } else if ($resultado % 2 == 1 && $parouimpar1 == "impar"){
+            echo "Jogador 1 venceu!";
+        } else if ($resultado % 2 == 1 && $parouimpar2 == "impar"){
+            echo "Jogador 2 venceu!";
+        }
+    } else if ($jogador1 == $jogador3 && $jogador1 != $jogador2) {
         $ganhador1 = 1;
-        $ganhador2 = 3;
+        $ganhador3 = 3;
         $perdedor = 2;
-    } elseif ($jogador2 == $jogador3 && $jogador2 != $jogador1) {
-        $ganhador1 = 2;
-        $ganhador2 = 3;
+
+        echo "Perdedor do dois-ou-um: Jogador $perdedor\n";
+        echo "Ganhador 1 do dois-ou-um: Jogador $ganhador1\n";
+        echo "Ganhador 3 do dois-ou-um: Jogador $ganhador3\n";
+
+        $parouimpar1 = readline("Escolha jogador 1 par ou ímpar: ");
+        $parouimpar3 = readline("Escolha jogador 3 par ou ímpar: ");
+        
+        $escolhaVencedor1 = (int)readline("Jogador $ganhador1 escolhe um número ímpar ou par: ");
+        $escolhaVencedor3 = (int)readline("Jogador $ganhador3 escolhe um número ímpar ou par: ");
+
+        $resultado = $escolhaVencedor1 + $escolhaVencedor3;
+        if ($resultado % 2 == 0 && $parouimpar1 == "par"){
+            echo "Jogador 1 venceu!";
+        } else if ($resultado % 2 == 0 && $parouimpar3 == "par"){
+            echo "Jogador 3 venceu!";
+        } else if ($resultado % 2 == 1 && $parouimpar1 == "impar"){
+            echo "Jogador 1 venceu!";
+        } else if ($resultado % 2 == 1 && $parouimpar3 == "impar"){
+            echo "Jogador 3 venceu!";
+        }
+    } else if ($jogador2 == $jogador3 && $jogador2 != $jogador1) {
+        $ganhador2 = 2;
+        $ganhador3 = 3;
         $perdedor = 1;
+
+        echo "Perdedor do dois-ou-um: Jogador $perdedor\n";
+        echo "Ganhador 2 do dois-ou-um: Jogador $ganhador2\n";
+        echo "Ganhador 3 do dois-ou-um: Jogador $ganhador3\n";
+
+        $parouimpar2 = readline("Escolha jogador 2 par ou ímpar: ");
+        $parouimpar3 = readline("Escolha jogador 3 par ou ímpar: ");
+        
+        $escolhaVencedor2 = (int)readline("Jogador $ganhador2 escolhe um número ímpar ou par: ");
+        $escolhaVencedor3 = (int)readline("Jogador $ganhador3 escolhe um número ímpar ou par: ");
+
+        $resultado = $escolhaVencedor2 + $escolhaVencedor3;
+        if ($resultado % 2 == 0 && $parouimpar2 == "par"){
+            echo "Jogador 2 venceu!";
+        } else if ($resultado % 2 == 0 && $parouimpar3 == "par"){
+            echo "Jogador 3 venceu!";
+        } else if ($resultado % 2 == 1 && $parouimpar2 == "impar"){
+            echo "Jogador 2 venceu!";
+        } else if ($resultado % 2 == 1 && $parouimpar3 == "impar"){
+            echo "Jogador 3 venceu!";
+        }
     } else {
         echo "Não há um jogador que tirou diferente. Reinicie o jogo e tente novamente.\n";
-        exit;
     }
-
-    echo "Perdedor do dois-ou-um: Jogador $perdedor\n";
-    echo "Ganhador 1 do dois-ou-um: Jogador $ganhador1\n";
-    echo "Ganhador 2 do dois-ou-um: Jogador $ganhador2\n";
-
-
-    $parouimpar1 = readline("1 para par e 2 para impar");
-    $parouimpar2 = readline("1 para par e 2 para impar");
-
-    $escolhaVencedor1 = (int)readline("Jogador $ganhador1 escolhe um número ímpar ou par: ");
-    $escolhaVencedor2 = (int)readline("Jogador $ganhador2 escolhe um número ímpar ou par: ");
-
-    if ($parouimpar1 = 1 && $paroumimpar2 = 2){
-        $soma = $escolhaVencedor1 + $escolhaVencedor2;
-        if ($soma % 2 == 0) {
-            echo "Jogador $ganhador1 ganhou o jogo!\n";
-        } else {
-            echo "Jogador $ganhador2 ganhou o jogo!\n";
-        }
-    }else if ($parouimpar1 = 2 && $paroumimpar2 = 1){
-        $soma = $escolhaVencedor1 + $escolhaVencedor2;
-        if ($soma % 2 == 0) {
-            echo "Jogador $ganhador1 ganhou o jogo!\n";
-        } else {
-            echo "Jogador $ganhador2 ganhou o jogo!\n";
-        }
-    }
-
