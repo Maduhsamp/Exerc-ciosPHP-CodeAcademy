@@ -1,0 +1,124 @@
+1.
+    <?php
+
+    function soma($a, $b) {
+        return $a + $b;
+    }
+
+    function subtracao($a, $b) {
+        return $a - $b;
+    }
+
+    function multiplicacao($a, $b) {
+        return $a * $b;
+    }
+
+    function divisao($a, $b) {
+        if ($b == 0) {
+            return "Erro: divisão por zero!";
+        } else {
+            return $a / $b;
+        }
+    }
+
+    echo "Escolha a operação (1 para soma, 2 para subtração, 3 para multiplicação e 4 para divisão): ";
+    $operacao = readline();
+
+    echo "Digite o primeiro número: ";
+    $num1 = readline();
+
+    echo "Digite o segundo número: ";
+    $num2 = readline();
+
+    switch ($operacao) {
+        case 1:
+            $resultado = soma($num1, $num2);
+            break;
+        case 2:
+            $resultado = subtracao($num1, $num2);
+            break;
+        case 3:
+            $resultado = multiplicacao($num1, $num2);
+            break;
+        case 4:
+            $resultado = divisao($num1, $num2);
+            break;
+        default:
+            $resultado = "Operação inválida!";
+    }
+
+    echo "Resultado da operação escolhida: " . $resultado;
+
+2.
+    <?php
+
+    function ehMultiploDe4() {
+        echo "Digite um número inteiro: ";
+        $numero = readline();
+        return ($numero % 4 == 0);
+    }
+
+    function ehPar() {
+        echo "Digite um número inteiro: ";
+        $numero = readline();
+        return ($numero % 2 == 0);
+    }
+
+    function somaEntreDoisNumeros() {
+        echo "Digite o primeiro número: ";
+        $numero1 = readline();
+
+        echo "Digite o segundo número: ";
+        $numero2 = readline();
+
+        $soma = 0;
+        $inicio = min($numero1, $numero2) + 1;
+        $fim = max($numero1, $numero2) - 1;
+
+        for ($i = $inicio; $i <= $fim; $i++) {
+            $soma += $i;
+        }
+        return $soma;
+    }
+
+    function somaDivisiveisPorA() {
+        echo "Digite o número a ser considerado para a realização de uma divisão: ";
+        $a = readline();
+
+        echo "Digite o valor inicial: ";
+        $b = readline();
+
+        echo "Digite o valor final: ";
+        $c = readline();
+
+        $soma = 0;
+
+        for ($i = $b; $i <= $c; $i++) {
+            if ($i % $a == 0) {
+                $soma += $i;
+            }
+        }
+        return $soma;
+    }
+
+    function pesoIdeal() {
+        echo "Digite a altura: ";
+        $altura = readline();
+
+        echo "Digite o sexo ('masculino' ou 'feminino'): ";
+        $sexo = readline();
+
+        if ($sexo == 'masculino') {
+            return 72.7 * $altura - 58;
+        } elseif ($sexo == 'feminino') {
+            return 62.1 * $altura - 44.7;
+        } else {
+            return "Sexo inválido";
+        }
+    }
+
+    echo "É múltiplo de 4? " . (ehMultiploDe4() ? 'Sim' : 'Não') . "\n";
+    echo "É par? " . (ehPar() ? 'Sim' : 'Não') . "\n";
+    echo "Soma entre 1 e 4: " . somaEntreDoisNumeros() . "\n";
+    echo "Soma dos números divisíveis por 2 entre 5 e 10: " . somaDivisiveisPorA() . "\n";
+    echo "Peso ideal para uma pessoa: " . pesoIdeal() . "\n";

@@ -1,0 +1,202 @@
+1.
+    $valor = readline("Digite um número: ");
+
+        if ($valor > 10) {
+            echo "É maior que 10!";
+        } else {
+            echo "Não é maior que 10!";
+        }
+
+2.
+    $valor = readline("Digite um número: ");
+
+    if ($valor >= 0) {
+        echo "É positivo!";
+    } else {
+        echo "É negativo!";
+    }
+
+3. 
+    $macas = readline("Digite o número de maçãs que deseja comprar: ");
+
+    if ($macas < 12) {
+        $custo_total = $macas * 1.30;
+        echo "O custo total da compra é: R$ " . $custo_total;
+    } else {
+        echo "O custo total da compra é: R$ " . $macas;
+    }
+
+4.
+    $nota1 = readline("Digite a nota final do primeiro bimestre do 1a: ");
+    $nota2 = readline("Digite a nota final do segundo bimestre do 1a: ");
+    $nota3 = readline("Digite a nota final do terceiro bimestre do 1a: ");
+    $nota4 = readline("Digite a nota final do quarto bimestre do 1a: ");
+
+    $nota5 = readline("Digite a nota final do primeiro bimestre do 2a: ");
+    $nota6 = readline("Digite a nota final do segundo bimestre do 2a: ");
+    $nota7 = readline("Digite a nota final do terceiro bimestre do 2a: ");
+    $nota8 = readline("Digite a nota final do quarto bimestre do 2a: ");
+
+    $media1a = $nota1 + $nota2 + $nota3 + $nota4 / 4;
+    $media2a = $nota5 + $nota6 + $nota7 + $nota8 / 4;
+
+    if ($media1a >= 6 && $media2a >= 6) {
+        echo "Aluno foi aprovado no 1a com a média de: " . $media1a . " e no 2a foi aprovado com a média de: " . $media2a . ".\n" . "As médias foram calculadas da seguinte forma: " . $media1a ." = " . $nota1 . " + " . $nota2 . " + " . 
+        $nota3 . " + " . $nota4 . " / 4"; 
+    }   
+    else if ($media1a >= 6 && $media2a < 6){
+        echo "Aluno foi aprovado no 1a com a média de: " . $media1a . " e no 2a foi reprovado com a média de: " . $media2a . ".\n" . "As médias foram calculadas da seguinte forma: " . $media1a ." = " . $nota1 . " + " . $nota2 . " + " . 
+        $nota3 . " + " . $nota4 . " / 4";
+    } 
+    else if ($media1a < 6 && $media2a >= 6) {
+        echo "Aluno foi reprovado no 1a com a média de: " . $media1a . " e no 2a foi aprovado com a média de: " . $media2a . ".\n" . "As médias foram calculadas da seguinte forma: " . $media1a ." = " . $nota1 . " + " . $nota2 . " + " . 
+        $nota3 . " + " . $nota4 . " / 4";
+    }
+    else if ($media1a < 6 && $media2a < 60) {
+        echo "Aluno foi reprovado no 1a com a média de: " . $media1a . " e no 2a foi reprovado com a média de: " . $media2a . ".\n" . "As médias foram calculadas da seguinte forma: " . $media1a ." = " . $nota1 . " + " . $nota2 . " + " . 
+        $nota3 . " + " . $nota4 . " / 4";
+    }
+
+5.
+
+    $nascimento = readline("Digite o ano de nascimento: ");
+
+    $idade = 2024 - $nascimento;
+
+    if ($idade >= 16 && $idade >= 18) {
+        echo "A pessoa tem " . $idade . " anos, pode votar e tirar sua Carteira de Habilitação!";
+    }
+    else if ($idade >= 16 && $idade < 18) {
+        echo "A pessoa tem " . $idade . " anos e já pode votar!";
+    }
+    else if ($idade < 16) {
+        echo "A pessoa ainda não pode votar!";
+    }
+
+6.
+    $a = readline("Digite o valor de a: ");
+    $b = readline("Digite o valor de b: ");
+        
+    if ($a != $b) {
+        if ($a > $b) {
+            echo "O maior valor é: $a";
+        } else {
+            echo "O maior valor é: $b";
+        }
+    } else {
+        echo "Os valores não podem ser iguais!" . "\nTente novamente!";
+    }
+
+7.
+    $idade = readline("Digite a idade do nadador: ");
+
+    if ($idade > 4 && $idade <= 7) {
+        echo "Categoria: Infantil A";
+    }
+    else if ($idade > 7 && $idade <= 10) {
+        echo "Categoria: Infantil B";
+    }
+    else if ($idade > 10 && $idade <= 13) {
+        echo "Categoria: Juvenil A";
+    }
+    else if ($idade > 13 && $idade <= 17) {
+        echo "Categoria: Juvenil B";
+    }
+    else if ($idade >= 18) {
+        echo "Categoria: Sênior";
+    }
+
+8.
+    $produto = readline("Digite o valor do produto: ");
+    $codigo = readline("Digite o código de pagamento: ");
+
+    if ($codigo == 1) {
+        $valor = $produto - ($produto * 0.1);
+        echo "O valor a ser pago é: " . $valor;
+    }
+    else if ($codigo == 2) {
+        $valor = $produto - ($produto * 0.05);
+        echo "O valor a ser pago é: " . $valor;
+    }
+    else if ($codigo == 3) {
+        echo "O valor a ser pago é: " . $produto;
+    }
+    else if ($codigo == 4) {
+        $valor = $produto + ($produto * 0.1);
+        echo "O valor a ser pago é: " . $valor;
+    }
+
+9.
+    $num = readline("Digite um número: ");
+
+    if ($num >= 30 && $num <= 90) {
+        echo "O número está entre 30 e 90!";
+    }
+    else if ($num > 120) {
+        echo "O número é maior que 120!";
+    }
+    else {
+        echo "O número não se encaixa em nenhuma dessas condições!";
+    }
+
+10. 
+    $produto = readline("Digite o valor do produto: ");
+
+    if ($produto < 20) {
+        $valor = $produto + ($produto * 0.45);
+        echo "O preço de venda é: R$ " . $valor;
+    }
+    else {
+        $valor = $produto + ($produto * 0.30);
+        echo "O preço de venda é: R$ " . $valor;
+    }
+
+11.
+    $jogador1 = (int)readline("Escolha do Jogador 1 (1 para 'um', 2 para 'dois'): ");
+    $jogador2 = (int)readline("Escolha do Jogador 2 (1 para 'um', 2 para 'dois'): ");
+    $jogador3 = (int)readline("Escolha do Jogador 3 (1 para 'um', 2 para 'dois'): ");
+
+    if ($jogador1 == $jogador2 && $jogador1 != $jogador3) {
+        $ganhador1 = 1;
+        $ganhador2 = 2;
+        $perdedor = 3;
+    } elseif ($jogador1 == $jogador3 && $jogador1 != $jogador2) {
+        $ganhador1 = 1;
+        $ganhador2 = 3;
+        $perdedor = 2;
+    } elseif ($jogador2 == $jogador3 && $jogador2 != $jogador1) {
+        $ganhador1 = 2;
+        $ganhador2 = 3;
+        $perdedor = 1;
+    } else {
+        echo "Não há um jogador que tirou diferente. Reinicie o jogo e tente novamente.\n";
+        exit;
+    }
+
+    echo "Perdedor do dois-ou-um: Jogador $perdedor\n";
+    echo "Ganhador 1 do dois-ou-um: Jogador $ganhador1\n";
+    echo "Ganhador 2 do dois-ou-um: Jogador $ganhador2\n";
+
+
+    $parouimpar1 = readline("1 para par e 2 para impar");
+    $parouimpar2 = readline("1 para par e 2 para impar");
+
+    $escolhaVencedor1 = (int)readline("Jogador $ganhador1 escolhe um número ímpar ou par: ");
+    $escolhaVencedor2 = (int)readline("Jogador $ganhador2 escolhe um número ímpar ou par: ");
+
+    if ($parouimpar1 = 1 && $paroumimpar2 = 2){
+        $soma = $escolhaVencedor1 + $escolhaVencedor2;
+        if ($soma % 2 == 0) {
+            echo "Jogador $ganhador1 ganhou o jogo!\n";
+        } else {
+            echo "Jogador $ganhador2 ganhou o jogo!\n";
+        }
+    }else if ($parouimpar1 = 2 && $paroumimpar2 = 1){
+        $soma = $escolhaVencedor1 + $escolhaVencedor2;
+        if ($soma % 2 == 0) {
+            echo "Jogador $ganhador1 ganhou o jogo!\n";
+        } else {
+            echo "Jogador $ganhador2 ganhou o jogo!\n";
+        }
+    }
+

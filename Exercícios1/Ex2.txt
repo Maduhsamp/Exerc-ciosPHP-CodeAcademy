@@ -1,0 +1,129 @@
+2. Escreva um algoritmo para os problemas a seguir:
+    a) Dados dois números inteiros (dividendo e divisor), apresentar o quociente e o resto.
+    b) A partir de quatro números que serão fornecidos, calcular a média ponderada, considerando os pesos 1, 2, 3 e 4 respectivamente.
+    c) Calcular o valor de um produto que sofreu reajuste de 1%.
+    d) Sabendo-se que 100 quilowatts de energia custa um sétimo do salário mínimo, fazer um algoritmo que receba o valor do salário mínimo e a quantidade de quilowatts gasta por uma residência. Calcular: o valor em reais de cada quilowatt, o valor em reais a ser pago e o valor a ser pago com desconto de 10%.
+    e) Dadas a base e a altura de um retângulo, calcular o perímetro, a área e a diagonal.
+    f) Calcular a área de um triângulo (dadas a base e a altura).
+    g) Calcular a área de um losango (dadas as diagonais maior e menor).
+    h) Dados o numerador e o denominador de uma fração, transformá-la em um número decimal.
+    i) Dada a hora, calcular quantos minutos se passaram desde o início do dia.
+    j) Uma revendedora de carros usados paga a seus funcionários vendedores um salário fixo por mês, mais uma comissão também fixa para cada carro vendido e mais 5% do valor das vendas por ele efetuadas. Escrever um algoritmo que leia o número de carros por ele vendidos, o valor total de suas vendas, o salário fixo e o valor que ele recebe por carro vendido. Calcule e escreva o salário final do vendedor.
+
+----------------------------------------------------------------------------------------------------------
+
+Respostas: 
+
+    a)
+    <?php
+
+        $a = readline("Digite um número inteiro: ");
+        $b = readline("Digite outro número inteiro: ");
+
+        $quociente = $a / $b;
+        $resto = $a % $b;
+
+        echo "a)". " " . "O quociente será" . " " . $quociente . ";\n" . "O resto será" . " " . $resto . ".";
+
+    b) 
+    <?php
+
+        $a = readline("Digite o primeiro número: ");
+        $b = readline("Digite o segundo número: ");
+        $c = readline("Digite o terceiro número: ");
+        $d = readline("Digite o quarto número: ");
+
+        $peso = 1 + 2 + 3 + 4;
+
+        $soma = ($a*1) + ($b*2) + ($c*3) + ($d*4);
+
+        echo $soma / $peso;
+
+    c)
+    <?php
+
+        $a = readline("Digite um número: ");
+
+        $resultado = $a * 1 / 100;
+
+        echo $resultado;
+
+    d)
+    <?php 
+
+        $salario = readline("Digite seu salário: ");
+        $qtd_gasta = readline("Qual a quantidade de quilowwats gasta em sua residência? ");
+
+        $ql100 = $salario / 7;
+
+        $ql1 = $ql100 / 100;
+        echo "Cada quilowatt custa: R$ " . round($ql1, 2) . "\n";
+        $valor = $ql1 * $qtd_gasta;
+        echo "O valor a ser pago pelos quilowatts foi de R$ " . round($valor, 2) . "\n";
+        $desconto = $valor / 10;
+        echo "O valor a ser pago com desconto é : " . round($valor - $valor, 2);
+
+    e)
+    <?php
+
+        $altura = readline("Digite o valor da altura do retângulo: ");
+        $base = readline("Digite o valor da base do retângulo: ");
+
+        $perimetro = 2 * ($base + $altura);
+        $area = $base * $altura;
+        $diagonal = sqrt(($base * $base) + ($altura * $altura));
+        
+        echo "O perímetro do retângulo é" . " " . $perimetro . ".\n" . "A área" . " " . $area . " " . "e a diagonal" . "\n" . $diagonal . ".";
+
+    f)
+    <?php
+
+        $altura = readline("Digite o valor da altura do triângulo: ");
+        $base = readline("Digite o valor da base do triângulo: ");
+
+        $area = ($base * $altura) / 2;
+
+        echo "A área do triângulo será:" . " " . $area . ".";
+
+    g)
+    <?php
+
+        $diagonal_maior = readline("Digite o valor da diagonal maior do losango: ");
+        $diagonal_menor = readline("Digite o valor da diagonal menor do losango: ");
+
+        $area = ($diagonal_maior * $diagonal_menor) / 2;
+
+        echo "A área do losango será:" . " " . $area . ".";
+
+    h)
+    <?php
+
+        $numerador = readline("Digite o numerador: ");
+        $denominador = readline("Digite o denominador: ");
+
+        $resultado = $numerador / $denominador;
+
+        echo "O resultado é: ". $resultado;
+
+    i)
+    <?php
+
+        $hora = readline("Digite a hora atual: ");
+
+        $minutos_passados = (int) $hora * 60;
+
+        echo "Se passaram " . $minutos_passados . " minutos até o horário atual.";
+
+    j)
+    <?php
+
+        $qtd_carros = readline("Digite a quantidade de carros vendidos: ");
+        $valor_total = readline("Digite o valor total das vendas: ");
+        $salario_fixo = readline("Digite o valor do salário fixo: ");
+        $comissao = 700;
+
+        $comissao_vendas = 0.05 * $valor_total;
+
+        $salario_final = $salario_fixo + ($comissao * $qtd_carros) + $comissao_vendas;
+
+        echo "O salário final do vendedor é R$ " . $salario_final . "."; 

@@ -1,0 +1,140 @@
+1.
+    <?php
+
+    $valores = array();
+
+    $numero = 5;
+
+    for ($i = 0; $i < 10; $i++) {
+
+        $valores[] = $numero;
+
+        $numero += 5;
+    }
+
+    foreach ($valores as $valor) {
+        echo $valor . "\n";
+    }
+
+2.
+    <?php
+
+    $valores = array();
+
+    for ($i = 0; $i < 10; $i++) {
+        $numero = readline("Digite um número: ");
+        $valores[] = $numero;
+    }
+
+    $negativos = 0;
+    $positivos = 0;
+    $pares = 0;
+    $impares = 0;
+
+    foreach ($valores as $numero) {
+        if ($numero < 0) {
+            $negativos++;
+        } elseif ($numero > 0) {
+            $positivos++;
+        }
+
+        if ($numero % 2 == 0) {
+            $pares++;
+        } else {
+            $impares++;
+        }
+    }
+
+    echo "Quantidade de números negativos: " . $negativos . "\n";
+    echo "Quantidade de números positivos: " . $positivos . "\n";
+    echo "Quantidade de números pares: " . $pares . "\n";
+    echo "Quantidade de números ímpares: " . $impares;
+
+3.
+    <?php
+
+    $valores = array();
+
+    for ($i = 0; $i < 10; $i++) {
+        $numero = readline("Digite um número positivo: ");
+        while ($numero <= 0) {
+            echo "Por favor, digite apenas números positivos.\n";
+            $numero = readline("Digite um número positivo: ");
+        }
+        $valores[] = $numero;
+    }
+
+    $maiorElemento = $valores[0];
+    $posicao = 0;
+
+    for ($i = 1; $i < count($valores); $i++) {
+        if ($valores[$i] > $maiorElemento) {
+            $maiorElemento = $valores[$i];
+            $posicao = $i;
+        }
+    }
+
+    echo "O maior elemento do vetor é: " . $maiorElemento . "\n";
+    echo "Ele ocupa a posição: " . ($posicao + 1);
+
+4.
+    <?php
+
+    $vetorA = array();
+
+    for ($i = 0; $i < 10; $i++) {
+        $numero = readline("Digite um número para o vetor A: ");
+        $vetorA[] = $numero;
+    }
+
+    $numeroB = readline("Digite um número para a variável B: ");
+
+    $vetorC = array();
+
+    foreach ($vetorA as $numero) {
+        $resultado = $numero * $numeroB;
+        $vetorC[] = $resultado;
+    }
+
+    echo "Vetor C (resultados de cada elemento de A multiplicado por B):\n";
+
+    foreach ($vetorC as $resultado) {
+        echo $resultado . " ";
+    }
+
+5.
+    <?php
+
+    $valores = array();
+
+    for ($i = 0; $i < 10; $i++) {
+        $numero = readline("Digite um número: ");
+        $valores[] = $numero;
+    }
+
+    for ($i = 9; $i >= 0; $i--) {
+        echo $valores[$i] . "\n";
+    }
+
+6.
+    <?php
+
+    $vetorA = array();
+    $vetorB = array();
+
+    for ($i = 0; $i < 10; $i++) {
+        $valor = readline("Insira valores no vetor A:\n");
+        $vetorA[] = $valor;
+    }
+
+    for ($i = 0; $i < 10; $i++) {
+        $valor = readline("Insira valores no vetor B:\n");
+        $vetorB[] = $valor;
+    }
+
+    echo "Multiplicação dos dados dos vetores A e B:\n";
+
+    for ($i = 0; $i < 10; $i++) {
+        $resultado = $vetorA[$i] * $vetorB[$i];
+        echo "Posição " . ($i + 1) . ": " . $resultado . "\n";
+    }

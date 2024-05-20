@@ -1,0 +1,159 @@
+1.
+    <?php
+
+    $x = 1;
+
+    while($x <= 10) {
+        echo "$x\n";
+
+        $x = $x + 1;
+    }
+
+2. 
+    <?php
+
+    $soma = 0;
+    $valores = 10;
+
+    for ($i = 1; $i <= $valores; $i++) {
+        
+        $valor = readline("Digite um número inteiro: ");
+
+        $soma += $valor;
+    }
+
+    $media = $soma / $valores;
+
+    echo "A soma dos valores é: $soma\n";
+    echo "A média dos valores é: $media";
+
+3.
+    <?php
+
+    $soma = 0;
+    $contador = 0;
+
+    echo "Digite números inteiros (digite 0 para finalizar o programa): \n";
+
+    while (true) {
+
+        $entrada = readline();
+
+        $valor = (int)$entrada;
+        
+        if ($valor == 0) {
+            break;
+        }
+        
+        $soma += $valor;
+        $contador++;
+    }
+
+    if ($contador > 0) {
+        $media = $soma / $contador;
+    } else {
+        $media = 0;
+    }
+
+    echo "Soma dos valores: $soma\n";
+    echo "Média dos valores: $media\n";
+    echo "Quantidade de valores lidos: $contador";
+
+4.
+    <?php
+
+    $soma = 0;
+    $contador = 0;
+
+    for ($i = 50; $i <= 70; $i++) {
+        if ($i % 2 == 0) {
+            $soma += $i;
+            $contador++;
+        }
+    }
+
+    if ($contador > 0) {
+        $media = $soma / $contador;
+    } else {
+        $media = 0;
+    }
+
+    echo "Soma dos valores pares entre 50 e 70: $soma\n";
+    echo "Média dos valores pares entre 50 e 70: $media";
+
+5.
+    <?php
+
+    $maior = null;
+    $menor = null;
+
+    echo "Digite números inteiros (digite 0 para finalizar o programa):\n";
+
+    while (true) {
+        $entrada = readline();
+        $valor = $entrada;
+        
+        if ($valor == 0) {
+            break;
+        }
+        
+        if ($maior === null || $valor > $maior) {
+            $maior = $valor;
+        }
+        
+        if ($menor === null || $valor < $menor) {
+            $menor = $valor;
+        }
+    }
+
+    if ($maior === null && $menor === null) {
+        echo "Nenhum valor foi fornecido.\n";
+    } else {
+        echo "Maior valor: $maior\n";
+        echo "Menor valor: $menor";
+    }
+
+6.
+    <?php
+
+    while (true) {  
+        while (true) {
+            echo "Digite a nota da 1ª avaliação (0 a 10): ";
+            $entrada = readline();
+            $nota1 = $entrada;
+
+            if ($nota1 >= 0 && $nota1 <= 10) {
+                break;
+            } else {
+                echo "Nota inválida. Por favor, digite um valor entre 0 e 10!\n";
+            }
+        }
+
+        while (true) {
+            echo "Digite a nota da 2ª avaliação (0 a 10): ";
+            $entrada = readline();
+            $nota2 = $entrada;
+
+            if ($nota2 >= 0 && $nota2 <= 10) {
+                break;
+            } else {
+                echo "Nota inválida. Por favor, digite um valor entre 0 e 10!\n";
+            }
+        }
+
+        $media = ($nota1 + $nota2) / 2;
+        echo "A média do aluno é: $media\n";
+
+        while (true) {
+            echo "NOVO CÁLCULO (S/N)? ";
+            $resposta = readline();
+
+            if ($resposta == 'S' || $resposta == 's') {
+                break;
+            } else if ($resposta == 'N' || $resposta == 'n') {
+                exit("Programa encerrado.\n");
+            } else {
+                echo "Resposta inválida. Digite 'S' para sim ou 'N' para não.\n";
+            }
+        }
+    }
